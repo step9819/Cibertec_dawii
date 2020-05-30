@@ -1,0 +1,20 @@
+create database  examendawii;
+USE examendawii;
+create table tipo(
+cod_tipo int primary key,
+nom_tipo varchar(45));
+insert into tipo values(1,'Tipo 1');
+insert into tipo values(2,'Tipo 2');
+insert into tipo values(3,'Tipo 3');
+insert into tipo values(4,'Tipo 4');
+
+create table cliente (
+cod_cliente int auto_increment,
+nom_cliente varchar(50) ,
+ape_cliente varchar(50),
+dni_cliente int(8),
+fec_nac_cliente VARCHAR(50),
+cod_tipo int,
+primary key (cod_cliente),
+foreign key (cod_tipo) references  Tipo(cod_tipo)
+);
